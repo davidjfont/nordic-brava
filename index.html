@@ -1,0 +1,1151 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description"
+        content="NÓRDIC - Brava Homes — Villas Nórdicas Llave en Mano en Cataluña. Un solo interlocutor. Control técnico total. Tranquilidad absoluta." />
+    <title>NÓRDIC - Brava Homes — Villas Nórdicas Llave en Mano</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg: #ffffff;
+            --ink: #1a1a1a;
+            --muted: #777777;
+            --line: #f0f0f0;
+            --soft: #fafafa;
+            --card: #ffffff;
+            --shadow: none;
+            --radius: 0px;
+            --radius2: 0px;
+            --max: 1200px;
+            --font-serif: 'Playfair Display', serif;
+            --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+        }
+
+        /* Base */
+        * {
+            box-sizing: border-box
+        }
+
+        html,
+        body {
+            height: 100%
+        }
+
+        body {
+            margin: 0;
+            font-family: var(--font-sans);
+            color: var(--ink);
+            background: var(--bg);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Layout */
+        .container {
+            max-width: var(--max);
+            margin: 0 auto;
+            padding: 0 20px
+        }
+
+        .section {
+            padding: 60px 0;
+            border-bottom: 1px solid var(--line);
+        }
+
+        @media (min-width: 768px) {
+            .section {
+                padding: 120px 0;
+            }
+        }
+
+        .section.compact {
+            padding: 40px 0
+        }
+
+        @media (min-width: 768px) {
+            .section.compact {
+                padding: 80px 0
+            }
+        }
+
+        .divider {
+            border-top: 1px solid var(--line)
+        }
+
+        /* Topbar */
+        .topbar {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, .95);
+            backdrop-filter: blur(8px);
+            z-index: 100;
+        }
+
+        .topbar-inner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 32px 0;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        @media (min-width: 768px) {
+            .topbar-inner {
+                padding: 48px 0;
+                gap: 32px;
+            }
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .mark {
+            width: 34px;
+            height: 34px;
+            border: 1px solid var(--ink);
+            border-radius: 10px;
+            display: grid;
+            place-items: center;
+            font-weight: 700;
+            font-size: 12px;
+            letter-spacing: .18em;
+        }
+
+        .brand-name {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1
+        }
+
+        .brand-name strong {
+            font-size: 13px;
+            letter-spacing: .22em
+        }
+
+        .brand-name span {
+            font-size: 11px;
+            color: var(--muted);
+            letter-spacing: .10em
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            font-size: 13px;
+            letter-spacing: .05em;
+            color: var(--ink);
+        }
+
+        .nav a {
+            transition: opacity .2s ease;
+        }
+
+        .nav a:hover {
+            opacity: 0.6;
+        }
+
+        .cta {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 32px;
+            border-radius: var(--radius);
+            border: 1px solid #333;
+            font-size: 14px;
+            letter-spacing: .02em;
+            cursor: pointer;
+            background: #fff;
+            color: #333;
+            transition: all .2s ease;
+            white-space: nowrap;
+        }
+
+        .btn.primary {
+            background: #4a4a4a;
+            color: #fff;
+            border-color: #4a4a4a;
+        }
+
+        .btn:hover {
+            opacity: 0.8;
+            transform: translateY(-1px);
+        }
+
+        /* Hero */
+        .hero {
+            padding: 72px 0 18px
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.05fr .95fr;
+            gap: 26px;
+            align-items: stretch;
+        }
+
+        @media (max-width: 980px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav {
+                display: none
+            }
+        }
+
+        .kicker {
+            font-size: 12px;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin: 0 0 10px;
+        }
+
+        h1 {
+            margin: 0 0 24px;
+            font-weight: 400;
+            font-family: var(--font-serif);
+            font-size: 56px;
+            line-height: 1.2;
+            color: #333;
+        }
+
+        @media (max-width: 520px) {
+            h1 {
+                font-size: 36px
+            }
+        }
+
+        .lead {
+            margin: 0 0 22px;
+            color: var(--muted);
+            font-size: 16px;
+            max-width: 58ch
+        }
+
+        .quote {
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+            padding: 16px 18px;
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            background: linear-gradient(180deg, #fff, #fafafa);
+        }
+
+        .quote .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--ink);
+            margin-top: 6px
+        }
+
+        .quote p {
+            margin: 0;
+            font-size: 14px;
+            color: var(--ink)
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 18px
+        }
+
+        /* Image placeholders */
+        .ph {
+            border: 1px dashed #d9d9d9;
+            background: repeating-linear-gradient(45deg,
+                    #fafafa,
+                    #fafafa 10px,
+                    #f3f3f3 10px,
+                    #f3f3f3 20px);
+            border-radius: var(--radius2);
+            min-height: 420px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ph.small {
+            min-height: 220px
+        }
+
+        .ph .label {
+            position: absolute;
+            left: 18px;
+            bottom: 16px;
+            font-size: 12px;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+            color: rgba(0, 0, 0, .55);
+            background: rgba(255, 255, 255, .85);
+            border: 1px solid rgba(0, 0, 0, .08);
+            padding: 8px 10px;
+            border-radius: 999px;
+        }
+
+        /* Cards */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px
+        }
+
+        @media (max-width: 980px) {
+
+            .grid-2,
+            .grid-3 {
+                grid-template-columns: 1fr
+            }
+        }
+
+        .card {
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: var(--radius2);
+            padding: 22px;
+            box-shadow: var(--shadow);
+        }
+
+        .card h2 {
+            margin: 0 0 10px;
+            font-size: 18px;
+            letter-spacing: -.01em
+        }
+
+        .card p {
+            margin: 0;
+            color: var(--muted)
+        }
+
+        .section-title {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 14px;
+            margin-bottom: 18px;
+        }
+
+        .section-title h2 {
+            margin: 0;
+            font-size: 22px;
+            letter-spacing: -.01em
+        }
+
+        .section-title p {
+            margin: 0;
+            color: var(--muted);
+            max-width: 70ch
+        }
+
+        /* Lists */
+        .bullets {
+            margin: 12px 0 0;
+            padding: 0 0 0 18px;
+            color: var(--muted)
+        }
+
+        .bullets li {
+            margin: 8px 0
+        }
+
+        /* 6 Steps */
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px
+        }
+
+        @media (max-width: 980px) {
+            .steps {
+                grid-template-columns: 1fr
+            }
+        }
+
+        .step {
+            border: 1px solid var(--line);
+            border-radius: var(--radius2);
+            padding: 18px 18px 16px;
+            background: #fff;
+        }
+
+        .step .n {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 30px;
+            height: 30px;
+            border-radius: 10px;
+            border: 1px solid var(--ink);
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: .08em;
+            font-size: 12px;
+        }
+
+        .step h3 {
+            margin: 0 0 8px;
+            font-size: 16px
+        }
+
+        .kv {
+            display: grid;
+            gap: 10px;
+            margin-top: 12px
+        }
+
+        .kv .row {
+            border-top: 1px solid var(--line);
+            padding-top: 10px
+        }
+
+        .kv b {
+            display: block;
+            font-size: 12px;
+            letter-spacing: .12em;
+            text-transform: uppercase
+        }
+
+        .kv span {
+            color: var(--muted);
+            font-size: 14px
+        }
+
+        /* Models */
+        .model {
+            border: 1px solid var(--line);
+            border-radius: var(--radius2);
+            overflow: hidden;
+            background: #fff;
+            box-shadow: var(--shadow);
+        }
+
+        .model .inner {
+            padding: 18px
+        }
+
+        .model h3 {
+            margin: 0 0 6px
+        }
+
+        .meta {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin: 10px 0 0
+        }
+
+        .pill {
+            font-size: 11px;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+            color: var(--muted);
+            border: 1px solid var(--line);
+            padding: 8px 10px;
+            border-radius: 999px;
+            background: #fff
+        }
+
+        .price {
+            margin-top: 12px;
+            font-weight: 650
+        }
+
+        .price small {
+            display: block;
+            font-weight: 400;
+            color: var(--muted);
+            margin-top: 4px
+        }
+
+        /* CTA panel */
+        .cta-panel {
+            border: 1px solid var(--line);
+            border-radius: 28px;
+            background: linear-gradient(180deg, #ffffff, #fafafa);
+            padding: 28px;
+            display: grid;
+            grid-template-columns: 1.2fr .8fr;
+            gap: 18px;
+            align-items: center;
+            box-shadow: var(--shadow);
+        }
+
+        @media (max-width: 980px) {
+            .cta-panel {
+                grid-template-columns: 1fr
+            }
+        }
+
+        .cta-panel h2 {
+            margin: 0 0 10px;
+            font-size: 22px
+        }
+
+        .cta-panel p {
+            margin: 0;
+            color: var(--muted)
+        }
+
+        /* Footer */
+        footer {
+            padding: 34px 0 46px;
+            color: var(--muted);
+            font-size: 12px
+        }
+
+        .foot {
+            display: flex;
+            justify-content: space-between;
+            gap: 18px;
+            flex-wrap: wrap;
+            border-top: 1px solid var(--line);
+            padding-top: 16px
+        }
+
+        /* Form */
+        form {
+            display: grid;
+            gap: 10px
+        }
+
+        .field {
+            display: grid;
+            gap: 6px
+        }
+
+        label {
+            font-size: 11px;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+            color: var(--muted)
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            padding: 12px 12px;
+            font: inherit;
+            background: #fff;
+            outline: none;
+        }
+
+        textarea {
+            min-height: 96px;
+            resize: vertical
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #bdbdbd
+        }
+
+        .note {
+            font-size: 12px;
+            color: var(--muted)
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Topbar -->
+    <header class="topbar">
+        <div class="container">
+            <div class="topbar-inner"
+                style="display: flex; flex-direction: column; align-items: center; gap: 30px; padding: 30px 0; text-align: center;">
+                <a class="brand" href="#top" aria-label="NÓRDIC - Brava Homes"
+                    style="display: flex; justify-content: center; padding: 10px 0;">
+                    <img src="logo-transparente.png" alt="NÓRDIC - Brava Homes Logo"
+                        style="height: 120px; width: auto; object-fit: contain;">
+                </a>
+                <nav class="nav" aria-label="Navegación"
+                    style="display: flex; justify-content: center; width: 100%; gap: 24px; flex-wrap: wrap; font-size: 13px; opacity: 0.8;">
+                    <a href="#quienes">Quiénes somos</a>
+                    <a href="#concepto">Concepto</a>
+                    <a href="#metodo">Método</a>
+                    <a href="#modelos">Modelos</a>
+                    <a href="#contacto">Contacto</a>
+                </nav>
+            </div>
+        </div>
+        <style>
+            @media (min-width: 768px) {
+                .topbar-inner {
+                    padding: 60px 0;
+                    gap: 40px;
+                }
+
+                .brand img {
+                    height: 250px;
+                }
+
+                .nav {
+                    gap: 60px;
+                    font-size: 14px;
+                }
+            }
+        </style>
+    </header>
+
+    <!-- Hero -->
+    <main id="top" class="hero" style="text-align: center; padding: 40px 0 0; overflow: hidden;">
+        <div class="container">
+            <div
+                style="max-width: 800px; margin: 0 auto 60px; display: flex; flex-direction: column; align-items: center; text-align: center;">
+                <p
+                    style="font-size: 12px; letter-spacing: 0.4em; text-transform: uppercase; color: #aaa; margin-bottom: 30px; text-align: center; width: 100%;">
+                    NÓRDIC - Brava Homes</p>
+                <h1
+                    style="margin-bottom: 30px; font-size: 42px; font-weight: 300; line-height: 1.1; padding: 0 10px; text-align: center;">
+                    Villas Nórdicas Llave en Mano</h1>
+                <p
+                    style="font-family: var(--font-serif); font-style: italic; font-size: 18px; color: #444; margin-bottom: 40px; line-height: 1.5; font-weight: 400; max-width: 25ch; margin-inline: auto; text-align: center;">
+                    “Un solo interlocutor. Control técnico total. Tranquilidad absoluta.”</p>
+                <div class="hero-actions"
+                    style="display: flex; flex-direction: column; align-items: center; gap: 16px; padding: 0 20px; width: 100%;">
+                    <a class="btn primary" href="#contacto"
+                        style="background: #1a1a1a; border-color: #1a1a1a; padding: 18px 30px; width: 100%; max-width: 300px;">Solicitar
+                        dossier</a>
+                    <a class="btn" href="#contacto" style="padding: 18px 30px; width: 100%; max-width: 300px;">Agendar
+                        consulta</a>
+                </div>
+            </div>
+
+            <div class="hero-img-box" style="width: 100%; margin-top: 20px;">
+                <img src="hero_render_1772475399181.png" alt="Villa Nórdica NÓRDIC - Brava Homes"
+                    style="width: 100%; height: auto; max-height: 70vh; object-fit: cover; display: block;">
+            </div>
+        </div>
+        <style>
+            @media (min-width: 768px) {
+                .hero {
+                    padding-top: 60px;
+                }
+
+                .hero h1 {
+                    font-size: 72px;
+                    margin-bottom: 40px;
+                }
+
+                .hero p {
+                    font-size: 24px;
+                    margin-bottom: 60px;
+                    max-width: 50ch;
+                    margin-inline: auto;
+                }
+
+                .hero-actions {
+                    flex-direction: row;
+                    justify-content: center;
+                    gap: 32px;
+                }
+
+                .hero-actions .btn {
+                    width: auto;
+                    padding: 18px 40px;
+                    max-width: none;
+                }
+
+                .hero-img-box {
+                    width: 100%;
+                    max-width: 1100px;
+                    margin: 40px auto 0;
+                    position: static;
+                }
+
+                .hero-img-box img {
+                    max-height: 80vh;
+                    border-radius: 4px;
+                }
+            }
+        </style>
+    </main>
+
+    <div class="divider"></div>
+
+    <!-- Quiénes somos -->
+    <section id="quienes" class="section">
+        <div class="container" style="text-align: center;">
+            <div style="max-width: 700px; margin: 0 auto; padding: 0 20px;">
+                <h2 style="font-family: var(--font-serif); font-size: 32px; font-weight: 400; margin-bottom: 30px;">Un
+                    solo interlocutor</h2>
+                <p style="font-size: 16px; color: var(--muted); margin-bottom: 40px; line-height: 1.6;">Gestionamos el
+                    desarrollo integral de su villa nórdica en Cataluña. Garantizamos transparencia absoluta a través de
+                    técnicos locales independientes.</p>
+                <div class="qs-info"
+                    style="display: flex; flex-direction: column; gap: 40px; margin-top: 30px; text-align: center;">
+                    <div>
+                        <h3 style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.2em; color: #bbb;">
+                            Alcance</h3>
+                        <p style="font-size: 14px; margin-top: 10px;">Gestión de terreno, Proyecto arquitectónico y
+                            Construcción llave en mano.</p>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.2em; color: #bbb;">
+                            Protección</h3>
+                        <p style="font-size: 14px; margin-top: 10px;">Control técnico externo, Seguro responsabilidad
+                            civil y Seguro decenal.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="qs-img-box" style="margin-top:60px; width: 100%; padding: 0 10px;">
+                <img src="equipo_visita_1772475411251.png" alt="Equipo técnico NÓRDIC - Brava Homes"
+                    style="width: 100%; height: 300px; object-fit: cover; display: block;">
+            </div>
+        </div>
+        <style>
+            @media (min-width: 768px) {
+                #quienes>div:first-child {
+                    max-width: 1000px !important;
+                }
+
+                #quienes h2 {
+                    font-size: 48px;
+                    margin-bottom: 40px;
+                }
+
+                #quienes p {
+                    font-size: 18px;
+                    margin-bottom: 60px;
+                    max-width: 800px;
+                    margin-inline: auto;
+                }
+
+                .qs-info {
+                    flex-direction: row;
+                    justify-content: center;
+                    gap: 120px;
+                    text-align: left;
+                }
+
+                .qs-info h3 {
+                    font-size: 12px;
+                }
+
+                .qs-info p {
+                    font-size: 15px;
+                }
+
+                #quienes .qs-img-box {
+                    margin-top: 80px;
+                    max-width: 900px;
+                    margin-inline: auto;
+                    padding: 0;
+                }
+
+                #quienes img {
+                    height: 500px;
+                    border-radius: 4px;
+                }
+            }
+        </style>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Concepto -->
+    <section id="concepto" class="section">
+        <div class="container">
+            <div class="grid-concepto" style="display: flex; flex-direction: column; gap: 40px; align-items: center;">
+                <div class="concepto-img" style="order: 2; width: 100%; padding: 0 10px;">
+                    <img src="interior_luz_1772475436548.png" alt="Diseño interior NÓRDIC - Brava Homes"
+                        style="width: 100%; height: 350px; object-fit: cover; display: block;">
+                </div>
+                <div class="concepto-text" style="order: 1; text-align: center; padding: 0 20px;">
+                    <h2 style="font-family: var(--font-serif); font-size: 32px; font-weight: 400; margin-bottom: 20px;">
+                        Arquitectura para vivir</h2>
+                    <p style="font-size: 16px; color: var(--muted); line-height: 1.6;">Diseño nórdico adaptado al clima
+                        mediterráneo. Viviendas eficientes, construidas con materiales naturales bajo los más altos
+                        estándares de sostenibilidad.</p>
+                </div>
+            </div>
+        </div>
+        <style>
+            @media (min-width: 768px) {
+                .grid-concepto {
+                    flex-direction: column;
+                    gap: 60px;
+                }
+
+                .concepto-img {
+                    order: 2;
+                    max-width: 900px;
+                    margin-inline: auto;
+                    padding: 0;
+                }
+
+                .concepto-text {
+                    order: 1;
+                    max-width: 800px;
+                    margin-inline: auto;
+                    text-align: center;
+                    padding: 0;
+                }
+
+                .grid-concepto h2 {
+                    font-size: 48px;
+                    margin-bottom: 30px;
+                }
+
+                .grid-concepto p {
+                    font-size: 18px;
+                    line-height: 1.8;
+                }
+
+                .grid-concepto img {
+                    height: 550px;
+                    border-radius: 4px;
+                }
+            }
+        </style>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Método -->
+    <section id="metodo" class="section">
+        <div class="container" style="text-align: center;">
+            <h2 style="font-family: var(--font-serif); font-size: 32px; font-weight: 400; margin-bottom: 60px;">El
+                Método</h2>
+            <div class="steps-grid"
+                style="display: grid; grid-template-columns: 1fr; gap: 40px; text-align: center; padding: 0 20px;">
+                <div class="step-item">
+                    <div style="font-family: var(--font-serif); font-size: 32px; color: #eee; margin-bottom: 15px;">01
+                    </div>
+                    <h3 style="font-size: 14px; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 10px;">
+                        Captación técnica</h3>
+                    <p style="font-size: 14px; color: var(--muted);">Análisis de necesidades y validación de viabilidad
+                        del terreno.</p>
+                </div>
+                <div class="step-item">
+                    <div style="font-family: var(--font-serif); font-size: 32px; color: #eee; margin-bottom: 15px;">02
+                    </div>
+                    <h3 style="font-size: 14px; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 10px;">
+                        Asesoría Jurídica</h3>
+                    <p style="font-size: 14px; color: var(--muted);">Soporte hasta la escritura con equipo inmobiliario
+                        externo.</p>
+                </div>
+                <div class="step-item">
+                    <div style="font-family: var(--font-serif); font-size: 32px; color: #eee; margin-bottom: 15px;">03
+                    </div>
+                    <h3 style="font-size: 14px; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 10px;">
+                        Proyecto y Licencias</h3>
+                    <p style="font-size: 14px; color: var(--muted);">Coordinación con arquitectos locales e ingeniería.
+                    </p>
+                </div>
+                <div class="step-item">
+                    <div style="font-family: var(--font-serif); font-size: 32px; color: #eee; margin-bottom: 15px;">04
+                    </div>
+                    <h3 style="font-size: 14px; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 10px;">
+                        Seguros y Garantía</h3>
+                    <p style="font-size: 14px; color: var(--muted);">Seguro decenal y responsabilidad civil integral.
+                    </p>
+                </div>
+                <div class="step-item">
+                    <div style="font-family: var(--font-serif); font-size: 32px; color: #eee; margin-bottom: 15px;">05
+                    </div>
+                    <h3 style="font-size: 14px; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 10px;">
+                        Ejecución Controlada</h3>
+                    <p style="font-size: 14px; color: var(--muted);">Seguimiento financiero y control de calidad
+                        externo.</p>
+                </div>
+                <div class="step-item">
+                    <div style="font-family: var(--font-serif); font-size: 32px; color: #eee; margin-bottom: 15px;">06
+                    </div>
+                    <h3 style="font-size: 14px; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 10px;">
+                        Entrega Final</h3>
+                    <p style="font-size: 14px; color: var(--muted);">Puesta en marcha y obtención del OK técnico
+                        municipal.</p>
+                </div>
+            </div>
+        </div>
+        <style>
+            @media (min-width: 768px) {
+                #metodo h2 {
+                    font-size: 48px;
+                    margin-bottom: 80px;
+                }
+
+                .steps-grid {
+                    grid-template-columns: repeat(2, 1fr);
+                    gap: 80px 120px;
+                    padding: 0;
+                    max-width: 900px;
+                    margin-inline: auto;
+                }
+
+                .step-item div {
+                    font-size: 40px;
+                    margin-bottom: 20px;
+                }
+
+                .step-item h3 {
+                    font-size: 16px;
+                    margin-bottom: 15px;
+                }
+            }
+        </style>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Casa piloto -->
+    <section id="piloto" class="section">
+        <div class="container">
+            <div class="grid-piloto" style="display: flex; flex-direction: column; gap: 40px; align-items: center;">
+                <div style="text-align: center; padding: 0 20px;">
+                    <h2 style="font-family: var(--font-serif); font-size: 32px; font-weight: 400; margin-bottom: 20px;">
+                        Credibilidad Real</h2>
+                    <p style="font-size: 16px; color: var(--muted); margin-bottom: 30px; line-height: 1.6;">Nuestra casa
+                        piloto es la demostración física de nuestro método. Un proyecto real que valida tiempos y
+                        calidad.</p>
+                </div>
+                <div class="piloto-gallery"
+                    style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 0 10px; width: 100%;">
+                    <img src="terreno_parcela_1772475626002.png" alt="Proceso 1"
+                        style="width: 100%; height: 150px; object-fit: cover; display: block;">
+                    <img src="estructura_madera_1772476034133.png" alt="Proceso 2"
+                        style="width: 100%; height: 150px; object-fit: cover; display: block;">
+                    <img src="detalle_tecnico_1772476095947.png" alt="Proceso 3"
+                        style="width: 100%; height: 150px; object-fit: cover; display: block;">
+                    <div
+                        style="background: var(--soft); display: flex; align-items: center; justify-content: center; height: 150px; font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; color: #ccc;">
+                        En curso</div>
+                </div>
+            </div>
+        </div>
+        <style>
+            @media (min-width: 768px) {
+                .grid-piloto {
+                    flex-direction: column;
+                    gap: 60px;
+                }
+
+                .grid-piloto>div:first-child {
+                    max-width: 800px;
+                    margin-inline: auto;
+                    text-align: center;
+                    padding: 0;
+                }
+
+                .piloto-gallery {
+                    max-width: 1000px;
+                    margin-inline: auto;
+                    gap: 20px;
+                    padding: 0;
+                }
+
+                .grid-piloto h2 {
+                    font-size: 48px;
+                    margin-bottom: 30px;
+                }
+
+                .grid-piloto p {
+                    font-size: 18px;
+                    margin-bottom: 40px;
+                }
+
+                .piloto-gallery img,
+                .piloto-gallery div {
+                    height: 250px;
+                    border-radius: 4px;
+                }
+            }
+        </style>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Modelos -->
+    <section id="modelos" class="section">
+        <div class="container" style="text-align: center;">
+            <h2 style="font-family: var(--font-serif); font-size: 32px; font-weight: 400; margin-bottom: 20px;">
+                Tipologías</h2>
+            <p
+                style="font-size: 14px; color: #ccc; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 60px;">
+                Precios base solo estructura</p>
+            <div class="modelos-grid" style="display: grid; grid-template-columns: 1fr; gap: 40px; padding: 0 20px;">
+                <article>
+                    <h3 style="font-family: var(--font-serif); font-size: 20px; margin-bottom: 5px;">Modelo S</h3>
+                    <p style="font-size: 13px; color: #aaa; margin-bottom: 5px;">70–90 m² | 2 Hab | 1 Baño</p>
+                    <p style="font-size: 16px; font-weight: 500; color: #eee;">Desde 75.000€</p>
+                </article>
+                <article>
+                    <h3 style="font-family: var(--font-serif); font-size: 20px; margin-bottom: 5px;">Modelo M</h3>
+                    <p style="font-size: 13px; color: #aaa; margin-bottom: 5px;">90–110 m² | 3 Hab | 2 Baños</p>
+                    <p style="font-size: 16px; font-weight: 500; color: #eee;">Desde 95.000€</p>
+                </article>
+                <article>
+                    <h3 style="font-family: var(--font-serif); font-size: 20px; margin-bottom: 5px;">Modelo L</h3>
+                    <p style="font-size: 13px; color: #aaa; margin-bottom: 5px;">110–130 m² | 4 Hab | 3 Baños</p>
+                    <p style="font-size: 16px; font-weight: 500; color: #eee;">Desde 125.000€</p>
+                </article>
+            </div>
+        </div>
+        <style>
+            @media (min-width: 768px) {
+                #modelos h2 {
+                    font-size: 48px;
+                    margin-bottom: 20px;
+                }
+
+                .modelos-grid {
+                    grid-template-columns: repeat(3, 1fr);
+                    padding: 0;
+                }
+
+                .modelos-grid h3 {
+                    font-size: 24px;
+                    margin-bottom: 15px;
+                }
+
+                .modelos-grid p:nth-child(2) {
+                    font-size: 15px;
+                }
+
+                .modelos-grid p:nth-child(3) {
+                    font-size: 18px;
+                }
+            }
+        </style>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- Contacto -->
+    <section id="contacto" class="section" style="border-bottom: none;">
+        <div class="container">
+            <div class="grid-contacto" style="display: flex; flex-direction: column; gap: 60px;">
+                <div style="text-align: center; padding: 0 20px;">
+                    <h2 style="font-family: var(--font-serif); font-size: 32px; font-weight: 400; margin-bottom: 20px;">
+                        Próximos Pasos</h2>
+                    <p style="font-size: 16px; color: var(--muted); margin-bottom: 30px; line-height: 1.6;">Iniciamos
+                        cada proyecto con una consulta técnica para evaluar su viabilidad.</p>
+                </div>
+                <div style="padding: 0 20px;">
+                    <form style="display: grid; gap: 20px;">
+                        <input type="text" placeholder="Nombre completo"
+                            style="border:none; border-bottom: 1px solid var(--line); border-radius:0; padding: 15px 0; font-size: 14px;">
+                        <input type="email" placeholder="Correo electrónico"
+                            style="border:none; border-bottom: 1px solid var(--line); border-radius:0; padding: 15px 0; font-size: 14px;">
+                        <select
+                            style="border:none; border-bottom: 1px solid var(--line); border-radius:0; padding: 15px 0; color: #999; background: transparent; font-size: 14px;">
+                            <option>Presupuesto estimado</option>
+                            <option>250k–500k</option>
+                            <option>500k–750k</option>
+                            <option>+750k</option>
+                        </select>
+                        <textarea placeholder="Mensaje"
+                            style="border:none; border-bottom: 1px solid var(--line); border-radius:0; padding: 15px 0; min-height: 80px; font-size: 14px;"></textarea>
+                        <button class="btn primary" type="button"
+                            style="margin-top: 20px; padding: 18px 0; width: 100%;">Enviar consulta</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <style>
+            @media (min-width: 768px) {
+                .grid-contacto {
+                    flex-direction: column;
+                    gap: 60px;
+                    align-items: center;
+                }
+
+                .grid-contacto>div {
+                    max-width: 800px;
+                    width: 100%;
+                    text-align: center;
+                    padding: 0;
+                }
+
+                .grid-contacto h2 {
+                    font-size: 48px;
+                    margin-bottom: 30px;
+                }
+
+                .grid-contacto p {
+                    font-size: 18px;
+                    margin-bottom: 40px;
+                }
+
+                .grid-contacto form {
+                    gap: 30px;
+                    max-width: 600px;
+                    margin-inline: auto;
+                }
+
+                .grid-contacto button {
+                    width: fit-content;
+                    padding: 18px 80px;
+                    margin-inline: auto;
+                }
+            }
+        </style>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="foot">
+                <div>
+                    <strong style="letter-spacing:0.1em; text-transform:uppercase">NÓRDIC - Brava Homes</strong>
+                    <div style="margin-top:6px">Villas nórdicas llave en mano en Cataluña. Eficiencia y durabilidad.
+                    </div>
+                </div>
+                <div>
+                    <div>Contacto: <span style="color:var(--ink)">hola@nordikabrava.com</span></div>
+                    <div style="margin-top:6px">© <span id="year"></span> NÓRDIC - Brava Homes</div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>
