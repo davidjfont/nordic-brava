@@ -1345,46 +1345,53 @@
                             <form id="sib-form" method="POST"
                                 action="https://00889b9f.sibforms.com/serve/MUIFAHdKWbxl7vGhEluji_dW4cdMjhvbIN8jWHi1tDY1Gs5Ag18bn2V_Rpn-7MtsauwLmvYdbCqJhsUTxsidngweJ2nsk4CNVGR_1spBxcYRZwKKy9ckE8i0mm-ctcdvTHny6zYMS5VF8hDnBl8aFTs3DrpcPf2trI8Wl5iFwaMOt3XPbQ8TA5s2LS5FXcP6qGvYX90YjL_K9GoFQg=="
                                 data-type="subscription">
+
                                 <div class="sib-input sib-form-block">
                                     <div class="form__entry entry_block">
                                         <div class="field">
                                             <label for="NOMBRE">Nombre completo</label>
                                             <input id="NOMBRE" name="NOMBRE" type="text"
-                                                placeholder="Nombre y apellidos" data-required="true" required />
-                                        </div>
-                                        <label class="entry__error entry__error--primary" style="display:none;"></label>
-                                    </div>
-                                </div>
-                                <div class="sib-input sib-form-block">
-                                    <div class="form__entry entry_block">
-                                        <div class="field">
-                                            <label for="EMAIL">Correo electrónico</label>
-                                            <input id="EMAIL" name="EMAIL" type="email" placeholder="correo@ejemplo.com"
+                                                placeholder="Nombre y apellidos" autocomplete="name"
                                                 data-required="true" required />
                                         </div>
                                         <label class="entry__error entry__error--primary" style="display:none;"></label>
                                     </div>
                                 </div>
+
+                                <div class="sib-input sib-form-block">
+                                    <div class="form__entry entry_block">
+                                        <div class="field">
+                                            <label for="EMAIL">Correo electrónico</label>
+                                            <input id="EMAIL" name="EMAIL" type="email" placeholder="correo@dominio.com"
+                                                autocomplete="email" data-required="true" required />
+                                        </div>
+                                        <label class="entry__error entry__error--primary" style="display:none;"></label>
+                                    </div>
+                                </div>
+
                                 <div class="sib-input sib-form-block">
                                     <div class="form__entry entry_block">
                                         <div class="field">
                                             <label for="PAIS">País</label>
                                             <input id="PAIS" name="PAIS" type="text" placeholder="Ej. Alemania / España"
-                                                data-required="true" required />
+                                                autocomplete="country" data-required="true" required />
                                         </div>
                                         <label class="entry__error entry__error--primary" style="display:none;"></label>
                                     </div>
                                 </div>
+
                                 <div class="sib-input sib-form-block">
                                     <div class="form__entry entry_block">
                                         <div class="field">
                                             <label for="TELEFONO">Teléfono</label>
                                             <input id="TELEFONO" name="TELEFONO" type="tel"
-                                                placeholder="+34 000 000 000" data-required="true" required />
+                                                placeholder="+34 600 000 000" pattern="[+0-9 ]+" autocomplete="tel"
+                                                data-required="true" required />
                                         </div>
                                         <label class="entry__error entry__error--primary" style="display:none;"></label>
                                     </div>
                                 </div>
+
                                 <div class="sib-input sib-form-block">
                                     <div class="form__entry entry_block">
                                         <div class="field">
@@ -1394,41 +1401,64 @@
                                                 <option value="Modelo S">Modelo S — 70–90 m²</option>
                                                 <option value="Modelo M">Modelo M — 90–110 m²</option>
                                                 <option value="Modelo L">Modelo L — 110–130 m²</option>
-                                                <option value="Otros">Otros / Personalizado</option>
+                                                <option value="Personalizado">Proyecto personalizado</option>
                                             </select>
                                         </div>
                                         <label class="entry__error entry__error--primary" style="display:none;"></label>
                                     </div>
                                 </div>
+
                                 <div class="sib-input sib-form-block">
                                     <div class="form__entry entry_block">
                                         <div class="field">
                                             <label for="PRESUPUESTO">Presupuesto estimado</label>
-                                            <input id="PRESUPUESTO" name="PRESUPUESTO" type="text"
-                                                placeholder="Ej. 150.000€" data-required="true" required />
-                                        </div>
-                                        <label class="entry__error entry__error--primary" style="display:none;"></label>
-                                    </div>
-                                </div>
-                                <div class="sib-input sib-form-block">
-                                    <div class="form__entry entry_block">
-                                        <div class="field">
-                                            <label for="TERRENO">¿Dispones de terreno?</label>
-                                            <select id="TERRENO" name="TERRENO[]" data-required="true" required>
-                                                <option value="" disabled selected>Seleccionar opción</option>
-                                                <option value="Si">Sí, dispongo de terreno</option>
-                                                <option value="No">No, estoy buscando</option>
+                                            <select id="PRESUPUESTO" name="PRESUPUESTO" data-required="true" required>
+                                                <option value="" disabled selected>Seleccionar rango</option>
+                                                <option value="100-200k">100.000€ – 200.000€</option>
+                                                <option value="200-350k">200.000€ – 350.000€</option>
+                                                <option value="350-500k">350.000€ – 500.000€</option>
+                                                <option value="500k+">Más de 500.000€</option>
                                             </select>
                                         </div>
                                         <label class="entry__error entry__error--primary" style="display:none;"></label>
                                     </div>
                                 </div>
+
+                                <div class="sib-input sib-form-block">
+                                    <div class="form__entry entry_block">
+                                        <div class="field">
+                                            <label for="TERRENO">¿Dispone de terreno?</label>
+                                            <select id="TERRENO" name="TERRENO" data-required="true" required>
+                                                <option value="" disabled selected>Seleccionar opción</option>
+                                                <option value="si">Sí, dispongo de terreno</option>
+                                                <option value="buscando">No, estoy buscando terreno</option>
+                                            </select>
+                                        </div>
+                                        <label class="entry__error entry__error--primary" style="display:none;"></label>
+                                    </div>
+                                </div>
+
+                                <div class="sib-input sib-form-block">
+                                    <div class="form__entry entry_block">
+                                        <div class="field">
+                                            <label for="PLAZO">¿Cuándo le gustaría iniciar el proyecto?</label>
+                                            <select id="PLAZO" name="PLAZO">
+                                                <option value="inmediato">Lo antes posible</option>
+                                                <option value="6meses">En los próximos 6 meses</option>
+                                                <option value="1ano">En aproximadamente 1 año</option>
+                                                <option value="explorando">Solo estoy explorando opciones</option>
+                                            </select>
+                                        </div>
+                                        <label class="entry__error entry__error--primary" style="display:none;"></label>
+                                    </div>
+                                </div>
+
                                 <div class="sib-input sib-form-block">
                                     <div class="form__entry entry_block">
                                         <div class="field">
                                             <label for="MENSAJE">Mensaje</label>
                                             <textarea id="MENSAJE" name="MENSAJE"
-                                                placeholder="Cuéntenos brevemente su proyecto, ubicación deseada y horizonte temporal..."></textarea>
+                                                placeholder="Cuéntenos brevemente su proyecto: zona donde le gustaría construir, superficie aproximada o cualquier información relevante."></textarea>
                                         </div>
                                         <label class="entry__error entry__error--primary" style="display:none;"></label>
                                     </div>
@@ -1447,13 +1477,13 @@
                                             d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.652-5.386-189.946-33.641-58.394-94.896-95.833-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.75 8.461-16.728 5.01z"
                                             fill="currentColor" />
                                     </svg>
-                                    Enviar consulta
+                                    Solicitar información
                                 </button>
                             </form>
                         </div>
                     </div>
-                    <p class="microcopy">Formulario demostrativo. La conexión a email, CRM o automatización se
-                        implementará en la siguiente fase.</p>
+                    <p class="microcopy">Tras enviar su solicitud recibirá un correo de confirmación. Nuestro equipo
+                        revisará su proyecto y se pondrá en contacto con usted en breve.</p>
                 </div>
 
                 <div class="bank-panel">
