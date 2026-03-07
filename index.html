@@ -1352,6 +1352,10 @@
                             <input id="EMAIL" name="EMAIL" type="email" placeholder="correo@ejemplo.com" required />
                         </div>
                         <div class="field">
+                            <label for="PAIS">País</label>
+                            <input id="PAIS" name="PAIS" type="text" placeholder="Ej. Alemania / España" required />
+                        </div>
+                        <div class="field">
                             <label for="TELEFONO">Teléfono</label>
                             <input id="TELEFONO" name="TELEFONO" type="tel" placeholder="+34 000 000 000" required />
                         </div>
@@ -1371,9 +1375,17 @@
                                 required />
                         </div>
                         <div class="field">
+                            <label for="TERRENO">¿Dispones de terreno?</label>
+                            <select id="TERRENO" name="TERRENO[]" required>
+                                <option value="" disabled selected>Seleccionar opción</option>
+                                <option value="Si">Sí, dispongo de terreno</option>
+                                <option value="No">No, estoy buscando</option>
+                            </select>
+                        </div>
+                        <div class="field">
                             <label for="MENSAJE">Mensaje</label>
                             <textarea id="MENSAJE" name="MENSAJE"
-                                placeholder="Cuéntenos brevemente su proyecto, ubicación deseada, si dispone de terreno..."></textarea>
+                                placeholder="Cuéntenos brevemente su proyecto, ubicación deseada y horizonte temporal..."></textarea>
                         </div>
 
                         <input type="text" name="email_address_check" value="" style="display:none !important;"
@@ -1383,8 +1395,8 @@
 
                         <button class="btn primary sib-form-block__button" type="submit">Enviar consulta</button>
                     </form>
-                    <p class="microcopy">Formulario demostrativo. La conexión a email, CRM o automatización se
-                        implementará en la siguiente fase.</p>
+                    <p class="microcopy">Al enviar este formulario, sus datos serán procesados cumpliendo con la
+                        normativa de privacidad para gestionar su solicitud.</p>
                 </div>
 
                 <div class="bank-panel">
