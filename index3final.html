@@ -193,24 +193,6 @@
             color: var(--ink);
         }
 
-        /* Menu Toggle (Hidden by default) */
-        .menu-toggle {
-            display: none;
-            flex-direction: column;
-            gap: 6px;
-            cursor: pointer;
-            padding: 10px;
-            z-index: 110;
-        }
-
-        .menu-toggle span {
-            display: block;
-            width: 28px;
-            height: 2px;
-            background: var(--ink);
-            transition: .3s ease;
-        }
-
         @media (min-width: 980px) {
             .nav {
                 display: flex;
@@ -218,65 +200,6 @@
 
             .brand img {
                 height: 88px;
-            }
-
-            .menu-toggle {
-                display: none !important;
-            }
-        }
-
-        /* Mobile Nav & Overlay */
-        @media (max-width: 979px) {
-            .menu-toggle {
-                display: flex;
-            }
-
-            .nav {
-                display: none;
-                flex-direction: column;
-                position: fixed;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                background: rgba(255, 255, 255, .98);
-                backdrop-filter: blur(10px);
-                padding: 120px 40px;
-                gap: 32px;
-                font-size: 1.4rem;
-                font-family: var(--font-serif);
-                z-index: 100;
-                text-align: center;
-                opacity: 0;
-                visibility: hidden;
-                transition: opacity .3s ease, visibility .3s ease;
-            }
-
-            .nav.active {
-                display: flex;
-                opacity: 1;
-                visibility: visible;
-            }
-
-            .nav a {
-                color: var(--ink);
-                font-weight: 500;
-            }
-
-            body.menu-open {
-                overflow: hidden;
-            }
-
-            .menu-toggle.active span:nth-child(1) {
-                transform: translateY(8px) rotate(45deg);
-            }
-
-            .menu-toggle.active span:nth-child(2) {
-                opacity: 0;
-            }
-
-            .menu-toggle.active span:nth-child(3) {
-                transform: translateY(-8px) rotate(-45deg);
             }
         }
 
@@ -733,37 +656,6 @@
             color: var(--muted);
         }
 
-        /* Hover effects */
-        .card,
-        .model-card,
-        .step,
-        .audience-card,
-        .plan-card,
-        .contact-panel,
-        .bank-panel {
-            transition: transform .3s cubic-bezier(.21, .6, .35, 1), box-shadow .3s ease;
-        }
-
-        .card:hover,
-        .model-card:hover,
-        .step:hover,
-        .audience-card:hover,
-        .plan-card:hover,
-        .contact-panel:hover,
-        .bank-panel:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, .08);
-        }
-
-        .btn {
-            transition: all .2s ease;
-        }
-
-        .btn:hover {
-            transform: scale(1.02);
-            filter: brightness(1.1);
-        }
-
         footer {
             padding: 34px 0 54px;
         }
@@ -794,45 +686,6 @@
             color: var(--muted);
         }
     </style>
-    <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
-    <style>
-        /* Reset Brevo default styles that conflict with our premium aesthetic */
-        .sib-form-container {
-            background-color: transparent !important;
-            padding: 0 !important;
-        }
-
-        .sib-form-message-panel {
-            margin-bottom: 20px;
-            border-radius: var(--radius) !important;
-            padding: 16px !important;
-        }
-
-        #sib-container {
-            border: none !important;
-            background: transparent !important;
-            padding: 0 !important;
-            max-width: 100% !important;
-        }
-
-        .sib-form-block {
-            padding: 0 !important;
-        }
-
-        .sib-input {
-            margin-bottom: 0 !important;
-        }
-
-        .entry__field {
-            margin-top: 0 !important;
-        }
-
-        .entry__label {
-            display: none !important;
-        }
-
-        /* We use our own labels */
-    </style>
 </head>
 
 <body>
@@ -843,7 +696,7 @@
                 <a class="brand" href="#top" aria-label="NÓRDIC - Brava Homes">
                     <img src="logo-transparente.png" alt="NÓRDIC - Brava Homes" />
                 </a>
-                <nav class="nav" id="mainNav" aria-label="Navegación principal">
+                <nav class="nav" aria-label="Navegación principal">
                     <a href="#quienes">Quiénes somos</a>
                     <a href="#concepto">Concepto</a>
                     <a href="#metodo">Método</a>
@@ -851,11 +704,6 @@
                     <a href="#modelos">Modelos</a>
                     <a href="#contacto">Contacto</a>
                 </nav>
-                <div class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
             </div>
         </div>
     </header>
@@ -1123,73 +971,62 @@
     </section>
 
     <section id="modelos" class="section">
-        <div class="container">
-            <div class="section-head" style="text-align: center; margin-inline: auto;">
-                <p class="eyebrow">Tipologías</p>
-                <h2>Modelos adaptables a su vida</h2>
-                <p class="lead" style="margin-inline: auto;">Precios base solo por la estructura de madera, base de
-                    nuestro método constructivo.</p>
-            </div>
+        <div class="container" style="text-align: center;">
+            <h2 style="font-family: var(--font-serif); font-size: 32px; font-weight: 400; margin-bottom: 20px;">
+                Tipologías</h2>
+            <p
+                style="font-size: 14px; color: #ccc; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 60px;">
+                Precios base solo estructura</p>
 
-            <div class="models-grid">
-                <article class="model-card">
-                    <div class="model-image">
-                        <img src="render-S.png" alt="Modelo S" style="width: 100%; height: 100%; object-fit: cover;">
-                    </div>
-                    <div class="content">
-                        <h3>Modelo S</h3>
-                        <div class="model-meta">
-                            <span class="pill">70–90 m²</span>
-                            <span class="pill">2 Hab</span>
-                            <span class="pill">1 Baño</span>
-                        </div>
-                        <p class="subcopy">Ideal para parejas o segunda residencia eficiente.</p>
-                        <div class="price-box">
-                            <strong>Desde 75.000€</strong>
-                            <p class="microcopy">Estructura de madera certificada</p>
-                        </div>
-                    </div>
+            <div class="modelos-grid" style="display: grid; grid-template-columns: 1fr; gap: 40px; padding: 0 20px;">
+
+                <article>
+                    <h3 style="font-family: var(--font-serif); font-size: 20px; margin-bottom: 5px;">Modelo S</h3>
+                    <p style="font-size: 13px; color: #aaa; margin-bottom: 5px;">70–90 m² | 2 Hab | 1 Baño</p>
+                    <p style="font-size: 16px; font-weight: 500; color: #eee;">Desde 75.000€</p>
                 </article>
 
-                <article class="model-card">
-                    <div class="model-image">
-                        <img src="render-M.png" alt="Modelo M" style="width: 100%; height: 100%; object-fit: cover;">
-                    </div>
-                    <div class="content">
-                        <h3>Modelo M</h3>
-                        <div class="model-meta">
-                            <span class="pill">90–110 m²</span>
-                            <span class="pill">3 Hab</span>
-                            <span class="pill">2 Baños</span>
-                        </div>
-                        <p class="subcopy">Equilibrio perfecto para familias en crecimiento.</p>
-                        <div class="price-box">
-                            <strong>Desde 95.000€</strong>
-                            <p class="microcopy">Estructura de madera certificada</p>
-                        </div>
-                    </div>
+                <article>
+                    <h3 style="font-family: var(--font-serif); font-size: 20px; margin-bottom: 5px;">Modelo M</h3>
+                    <p style="font-size: 13px; color: #aaa; margin-bottom: 5px;">90–110 m² | 3 Hab | 2 Baños</p>
+                    <p style="font-size: 16px; font-weight: 500; color: #eee;">Desde 95.000€</p>
                 </article>
 
-                <article class="model-card">
-                    <div class="model-image">
-                        <img src="render-L.png" alt="Modelo L" style="width: 100%; height: 100%; object-fit: cover;">
-                    </div>
-                    <div class="content">
-                        <h3>Modelo L</h3>
-                        <div class="model-meta">
-                            <span class="pill">110–130 m²</span>
-                            <span class="pill">4 Hab</span>
-                            <span class="pill">3 Baños</span>
-                        </div>
-                        <p class="subcopy">Espacios amplios y flexibilidad total.</p>
-                        <div class="price-box">
-                            <strong>Desde 125.000€</strong>
-                            <p class="microcopy">Estructura de madera certificada</p>
-                        </div>
-                    </div>
+                <article>
+                    <h3 style="font-family: var(--font-serif); font-size: 20px; margin-bottom: 5px;">Modelo L</h3>
+                    <p style="font-size: 13px; color: #aaa; margin-bottom: 5px;">110–130 m² | 4 Hab | 3 Baños</p>
+                    <p style="font-size: 16px; font-weight: 500; color: #eee;">Desde 125.000€</p>
                 </article>
+
             </div>
         </div>
+
+        <style>
+            @media (min-width: 768px) {
+                #modelos h2 {
+                    font-size: 48px;
+                    margin-bottom: 20px;
+                }
+
+                .modelos-grid {
+                    grid-template-columns: repeat(3, 1fr);
+                    padding: 0;
+                }
+
+                .modelos-grid h3 {
+                    font-size: 24px;
+                    margin-bottom: 15px;
+                }
+
+                .modelos-grid p:nth-child(2) {
+                    font-size: 15px;
+                }
+
+                .modelos-grid p:nth-child(3) {
+                    font-size: 18px;
+                }
+            }
+        </style>
     </section>
 
     <div class="divider"></div>
@@ -1324,64 +1161,34 @@
                         <li>Propuesta de avance y cronograma orientativo</li>
                     </ul>
 
-                    <div id="error-message" class="sib-form-message-panel"
-                        style="display:none; font-size:16px; text-align:left; font-family:var(--font-sans); color:#661d1d; background-color:#ffeded; border-radius:var(--radius); border: 1px solid #ff4949; margin-bottom: 24px;">
-                        <div class="sib-form-message-panel__text">
-                            <span class="sib-form-message-panel__inner-text">No hemos podido validar su petición. Por
-                                favor, revise los campos.</span>
-                        </div>
-                    </div>
-
-                    <div id="success-message" class="sib-form-message-panel"
-                        style="display:none; font-size:16px; text-align:left; font-family:var(--font-sans); color:#085229; background-color:#e7faf0; border-radius:var(--radius); border: 1px solid #13ce66; margin-bottom: 24px;">
-                        <div class="sib-form-message-panel__text">
-                            <span class="sib-form-message-panel__inner-text">Hemos recibido tu solicitud correctamente.
-                                Nos pondremos en contacto contigo pronto.</span>
-                        </div>
-                    </div>
-
-                    <form id="sib-form" method="POST"
-                        action="https://00889b9f.sibforms.com/serve/MUIFAHdKWbxl7vGhEluji_dW4cdMjhvbIN8jWHi1tDY1Gs5Ag18bn2V_Rpn-7MtsauwLmvYdbCqJhsUTxsidngweJ2nsk4CNVGR_1spBxcYRZwKKy9ckE8i0mm-ctcdvTHny6zYMS5VF8hDnBl8aFTs3DrpcPf2trI8Wl5iFwaMOt3XPbQ8TA5s2LS5FXcP6qGvYX90YjL_K9GoFQg=="
-                        data-type="subscription">
+                    <form>
                         <div class="field">
-                            <label for="NOMBRE">Nombre completo</label>
-                            <input id="NOMBRE" name="NOMBRE" type="text" placeholder="Nombre y apellidos" required />
+                            <label for="nombre">Nombre completo</label>
+                            <input id="nombre" type="text" placeholder="Nombre y apellidos" />
                         </div>
                         <div class="field">
-                            <label for="EMAIL">Correo electrónico</label>
-                            <input id="EMAIL" name="EMAIL" type="email" placeholder="correo@ejemplo.com" required />
+                            <label for="correo">Correo electrónico</label>
+                            <input id="correo" type="email" placeholder="correo@ejemplo.com" />
                         </div>
                         <div class="field">
-                            <label for="TELEFONO">Teléfono</label>
-                            <input id="TELEFONO" name="TELEFONO" type="tel" placeholder="+34 000 000 000" required />
+                            <label for="pais">País</label>
+                            <input id="pais" type="text" placeholder="Ej. Alemania" />
                         </div>
                         <div class="field">
-                            <label for="MODELO">Modelo de interés</label>
-                            <select id="MODELO" name="MODELO" required>
-                                <option value="" disabled selected>Seleccionar modelo</option>
-                                <option value="Modelo S">Modelo S — 70–90 m²</option>
-                                <option value="Modelo M">Modelo M — 90–110 m²</option>
-                                <option value="Modelo L">Modelo L — 110–130 m²</option>
-                                <option value="Otros">Otros / Personalizado</option>
+                            <label for="presupuesto">Presupuesto estimado</label>
+                            <select id="presupuesto">
+                                <option>Seleccionar modelo de referencia</option>
+                                <option>Modelo S — 70–90 m² (desde 75.000€ estructura)</option>
+                                <option>Modelo M — 90–110 m² (desde 95.000€ estructura)</option>
+                                <option>Modelo L — 110–130 m² (desde 125.000€ estructura)</option>
                             </select>
                         </div>
                         <div class="field">
-                            <label for="PRESUPUESTO">Presupuesto estimado</label>
-                            <input id="PRESUPUESTO" name="PRESUPUESTO" type="text" placeholder="Ej. 150.000€"
-                                required />
+                            <label for="mensaje">Mensaje</label>
+                            <textarea id="mensaje"
+                                placeholder="Cuéntenos brevemente su proyecto, ubicación deseada, si dispone de terreno y horizonte temporal."></textarea>
                         </div>
-                        <div class="field">
-                            <label for="MENSAJE">Mensaje</label>
-                            <textarea id="MENSAJE" name="MENSAJE"
-                                placeholder="Cuéntenos brevemente su proyecto, ubicación deseada, si dispone de terreno..."></textarea>
-                        </div>
-
-                        <input type="text" name="email_address_check" value="" style="display:none !important;"
-                            tabindex="-1">
-                        <input type="hidden" name="locale" value="es">
-                        <input type="hidden" name="html_type" value="simple">
-
-                        <button class="btn primary sib-form-block__button" type="submit">Enviar consulta</button>
+                        <button class="btn primary" type="button">Enviar consulta</button>
                     </form>
                     <p class="microcopy">Formulario demostrativo. La conexión a email, CRM o automatización se
                         implementará en la siguiente fase.</p>
@@ -1428,45 +1235,7 @@
 
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
-
-        // Mobile Menu Toggle
-        const menuToggle = document.getElementById('menuToggle');
-        const mainNav = document.getElementById('mainNav');
-        const body = document.body;
-
-        menuToggle.addEventListener('click', () => {
-            menuToggle.classList.toggle('active');
-            mainNav.classList.toggle('active');
-            body.classList.toggle('menu-open');
-        });
-
-        // Close menu when link is clicked
-        const navLinks = mainNav.querySelectorAll('a');
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                menuToggle.classList.remove('active');
-                mainNav.classList.remove('active');
-                body.classList.remove('menu-open');
-            });
-        });
     </script>
-    <script>
-        window.REQUIRED_CODE_ERROR_MESSAGE = 'Elija un código de país';
-        window.LOCALE = 'es';
-        window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "La información que ha proporcionado no es válida. Compruebe el formato del campo e inténtelo de nuevo.";
-        window.REQUIRED_ERROR_MESSAGE = "Este campo no puede quedarse vacío. ";
-        window.GENERIC_INVALID_MESSAGE = "La información que ha proporcionado no es válida. Compruebe el formato del campo e inténtelo de nuevo.";
-        window.translation = {
-            common: {
-                selectedList: '{quantity} lista seleccionada',
-                selectedLists: '{quantity} listas seleccionadas',
-                selectedOption: '{quantity} seleccionado',
-                selectedOptions: '{quantity} seleccionados',
-            }
-        };
-        var AUTOHIDE = Boolean(0);
-    </script>
-    <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
 </body>
 
 </html>
