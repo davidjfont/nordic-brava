@@ -1324,18 +1324,20 @@
                         <li>Propuesta de avance y cronograma orientativo</li>
                     </ul>
 
-                    <div id="form-success"
-                        style="display:none; padding:24px; border:1px solid #d8ead8; background:#f3fbf3; color:#1f5c2d; border-radius:var(--radius); margin-bottom:24px; font-family:var(--font-sans);">
-                        <div style="font-weight:700; margin-bottom:4px;">¡Solicitud recibida!</div>
-                        Gracias por su interés en NÓRDIC - Brava Homes. Hemos recibido su consulta correctamente y
-                        nuestro equipo se pondrá en contacto con usted en breve.
+                    <div id="error-message" class="sib-form-message-panel"
+                        style="display:none; font-size:16px; text-align:left; font-family:var(--font-sans); color:#661d1d; background-color:#ffeded; border-radius:var(--radius); border: 1px solid #ff4949; margin-bottom: 24px;">
+                        <div class="sib-form-message-panel__text">
+                            <span class="sib-form-message-panel__inner-text">No hemos podido validar su petición. Por
+                                favor, revise los campos.</span>
+                        </div>
                     </div>
 
-                    <div id="form-error"
-                        style="display:none; padding:24px; border:1px solid #f1c7c7; background:#fff4f4; color:#8a2d2d; border-radius:var(--radius); margin-bottom:24px; font-family:var(--font-sans);">
-                        <div style="font-weight:700; margin-bottom:4px;">Error en el envío</div>
-                        No hemos podido procesar su solicitud en este momento. Por favor, revise los campos e inténtelo
-                        de nuevo o escríbanos directamente a hola@nordicbrava.com.
+                    <div id="success-message" class="sib-form-message-panel"
+                        style="display:none; font-size:16px; text-align:left; font-family:var(--font-sans); color:#085229; background-color:#e7faf0; border-radius:var(--radius); border: 1px solid #13ce66; margin-bottom: 24px;">
+                        <div class="sib-form-message-panel__text">
+                            <span class="sib-form-message-panel__inner-text">Hemos recibido tu solicitud correctamente.
+                                Nos pondremos en contacto contigo pronto.</span>
+                        </div>
                     </div>
 
                     <div id="sib-form-container" class="sib-form-container">
@@ -1546,56 +1548,24 @@
                 body.classList.remove('menu-open');
             });
         });
-
-        // Form Submission (AJAX)
-        document.addEventListener('DOMContentLoaded', function () {
-            const form = document.getElementById('sib-form');
-            const successBox = document.getElementById('form-success');
-            const errorBox = document.getElementById('form-error');
-
-            if (!form) return;
-
-            form.addEventListener('submit', async function (e) {
-                e.preventDefault();
-
-                successBox.style.display = 'none';
-                errorBox.style.display = 'none';
-
-                const submitButton = form.querySelector('button[type="submit"]');
-                const originalText = submitButton.innerHTML;
-                submitButton.disabled = true;
-                submitButton.innerHTML = '<span style="opacity: 0.7;">Enviando...</span>';
-
-                try {
-                    const formData = new FormData(form);
-
-                    const response = await fetch(form.action, {
-                        method: 'POST',
-                        body: formData,
-                        headers: {
-                            'Accept': 'application/json'
-                        }
-                    });
-
-                    // Note: Brevo might return 302 or similar if not configured for AJAX, 
-                    // but we check if the request was successful.
-                    if (response.ok || response.status === 200) {
-                        form.reset();
-                        successBox.style.display = 'block';
-                        successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    } else {
-                        throw new Error('Server responded with error');
-                    }
-                } catch (error) {
-                    errorBox.style.display = 'block';
-                    errorBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                } finally {
-                    submitButton.disabled = false;
-                    submitButton.innerHTML = originalText;
-                }
-            });
-        });
     </script>
+    <script>
+        window.REQUIRED_CODE_ERROR_MESSAGE = 'Elija un código de país';
+        window.LOCALE = 'es';
+        window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "La información que ha proporcionado no es válida. Compruebe el formato del campo e inténtelo de nuevo.";
+        window.REQUIRED_ERROR_MESSAGE = "Este campo no puede quedarse vacío. ";
+        window.GENERIC_INVALID_MESSAGE = "La información que ha proporcionado no es válida. Compruebe el formato del campo e inténtelo de nuevo.";
+        window.translation = {
+            common: {
+                selectedList: '{quantity} lista seleccionada',
+                selectedLists: '{quantity} listas seleccionadas',
+                selectedOption: '{quantity} seleccionado',
+                selectedOptions: '{quantity} seleccionados',
+            }
+        };
+        var AUTOHIDE = Boolean(0);
+    </script>
+    <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
 </body>
 
 </html>
