@@ -1,0 +1,1531 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description"
+        content="NÓRDIC - Brava Homes — Villas nórdicas llave en mano en Cataluña. Un solo interlocutor. Control técnico total. Tranquilidad absoluta." />
+    <title>NÓRDIC - Brava Homes — Villas Nórdicas Llave en Mano</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg: #ffffff;
+            --ink: #191919;
+            --muted: #6f6f6f;
+            --soft: #f8f8f6;
+            --line: #ecebe7;
+            --accent: #2d2d2d;
+            --accent-soft: #f3f1ec;
+            --max: 1240px;
+            --font-serif: 'Playfair Display', serif;
+            --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --shadow: 0 10px 40px rgba(0, 0, 0, .04);
+            --radius: 22px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--ink);
+            font-family: var(--font-sans);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container {
+            width: 100%;
+            max-width: var(--max);
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .section {
+            padding: 72px 0;
+            border-bottom: 1px solid var(--line);
+        }
+
+        @media (min-width: 900px) {
+            .section {
+                padding: 120px 0;
+            }
+        }
+
+        .eyebrow {
+            margin: 0 0 14px;
+            font-size: 11px;
+            letter-spacing: .24em;
+            text-transform: uppercase;
+            color: var(--muted);
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            margin: 0;
+            color: var(--ink);
+            font-weight: 400;
+            letter-spacing: -.02em;
+        }
+
+        h1 {
+            font-family: var(--font-serif);
+            font-size: clamp(2.6rem, 6vw, 5.2rem);
+            line-height: 1.02;
+        }
+
+        h2 {
+            font-family: var(--font-serif);
+            font-size: clamp(2rem, 4vw, 3.3rem);
+            line-height: 1.08;
+        }
+
+        h3 {
+            font-size: 1.15rem;
+            font-weight: 500;
+        }
+
+        p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 1rem;
+        }
+
+        .lead {
+            font-size: 1.12rem;
+            line-height: 1.8;
+            max-width: 62ch;
+        }
+
+        .muted-strong {
+            color: #4a4a4a;
+        }
+
+        .btn-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 54px;
+            padding: 0 26px;
+            border-radius: 999px;
+            border: 1px solid var(--accent);
+            background: transparent;
+            color: var(--accent);
+            font-size: .95rem;
+            font-weight: 500;
+            transition: .2s ease;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            transform: translateY(-1px);
+            opacity: .9;
+        }
+
+        .btn.primary {
+            background: var(--accent);
+            color: #fff;
+        }
+
+        .topbar {
+            position: sticky;
+            top: 0;
+            z-index: 90;
+            background: rgba(255, 255, 255, .92);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(236, 235, 231, .85);
+        }
+
+        .topbar-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 88px;
+            gap: 20px;
+        }
+
+        .brand img {
+            height: 70px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .nav {
+            display: none;
+            gap: 28px;
+            align-items: center;
+            font-size: .92rem;
+            color: #535353;
+        }
+
+        .nav a:hover {
+            color: var(--ink);
+        }
+
+        /* Menu Toggle (Hidden by default) */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 110;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 28px;
+            height: 2px;
+            background: var(--ink);
+            transition: .3s ease;
+        }
+
+        @media (min-width: 980px) {
+            .nav {
+                display: flex;
+            }
+
+            .brand img {
+                height: 88px;
+            }
+
+            .menu-toggle {
+                display: none !important;
+            }
+        }
+
+        /* Mobile Nav & Overlay */
+        @media (max-width: 979px) {
+            .menu-toggle {
+                display: flex;
+            }
+
+            .nav {
+                display: none;
+                flex-direction: column;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(255, 255, 255, .98);
+                backdrop-filter: blur(10px);
+                padding: 120px 40px;
+                gap: 32px;
+                font-size: 1.4rem;
+                font-family: var(--font-serif);
+                z-index: 100;
+                text-align: center;
+                opacity: 0;
+                visibility: hidden;
+                transition: opacity .3s ease, visibility .3s ease;
+            }
+
+            .nav.active {
+                display: flex;
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .nav a {
+                color: var(--ink);
+                font-weight: 500;
+            }
+
+            body.menu-open {
+                overflow: hidden;
+            }
+
+            .menu-toggle.active span:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+
+            .menu-toggle.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .menu-toggle.active span:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+        }
+
+        .hero {
+            padding: 36px 0 0;
+        }
+
+        .hero-copy {
+            max-width: 860px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 36px 0 46px;
+        }
+
+        .hero-copy .lead {
+            margin: 26px auto 0;
+        }
+
+        .tagline-box {
+            margin: 24px auto 0;
+            max-width: 720px;
+            padding: 18px 22px;
+            border: 1px solid var(--line);
+            background: linear-gradient(180deg, #fff, #fbfbfa);
+            border-radius: 18px;
+            color: #333;
+            font-size: 1.02rem;
+        }
+
+        .hero-actions {
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .hero-media {
+            width: 100%;
+            overflow: hidden;
+            border-top-left-radius: 28px;
+            border-top-right-radius: 28px;
+            box-shadow: var(--shadow);
+        }
+
+        .hero-media img {
+            width: 100%;
+            height: min(72vh, 820px);
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .section-head {
+            display: grid;
+            gap: 16px;
+            margin-bottom: 40px;
+            max-width: 860px;
+        }
+
+        .grid-2 {
+            display: grid;
+            gap: 22px;
+        }
+
+        .grid-3 {
+            display: grid;
+            gap: 22px;
+        }
+
+        @media (min-width: 860px) {
+            .grid-2 {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .grid-3 {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .card {
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            padding: 28px;
+            box-shadow: var(--shadow);
+        }
+
+        .card h3 {
+            margin-bottom: 12px;
+        }
+
+        .card p+p {
+            margin-top: 14px;
+        }
+
+        .list {
+            margin: 18px 0 0;
+            padding-left: 18px;
+            color: var(--muted);
+        }
+
+        .list li {
+            margin: 8px 0;
+        }
+
+        .image-box {
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            background: var(--soft);
+            border: 1px solid var(--line);
+        }
+
+        .image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .concept-grid,
+        .pilot-grid,
+        .contact-grid {
+            display: grid;
+            gap: 28px;
+            align-items: start;
+        }
+
+        @media (min-width: 980px) {
+
+            .concept-grid,
+            .pilot-grid,
+            .contact-grid {
+                grid-template-columns: 1.02fr .98fr;
+            }
+        }
+
+        .feature-list {
+            display: grid;
+            gap: 14px;
+            margin-top: 24px;
+        }
+
+        .feature-item {
+            padding: 16px 0;
+            border-top: 1px solid var(--line);
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .feature-item strong {
+            font-size: .95rem;
+            color: var(--ink);
+        }
+
+        .feature-item span {
+            font-size: .96rem;
+            color: var(--muted);
+            max-width: 62%;
+            text-align: right;
+        }
+
+        .method-grid {
+            display: grid;
+            gap: 18px;
+        }
+
+        @media (min-width: 980px) {
+            .method-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .step {
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            padding: 24px;
+            background: #fff;
+        }
+
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border: 1px solid var(--ink);
+            border-radius: 999px;
+            font-size: .86rem;
+            margin-bottom: 16px;
+        }
+
+        .step h3 {
+            margin-bottom: 14px;
+            font-size: 1.05rem;
+        }
+
+        .step-block {
+            padding-top: 12px;
+            margin-top: 12px;
+            border-top: 1px solid var(--line);
+        }
+
+        .step-block strong {
+            display: block;
+            margin-bottom: 6px;
+            font-size: .74rem;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+            color: #555;
+        }
+
+        .step-block p {
+            font-size: .95rem;
+        }
+
+        .pilot-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px;
+        }
+
+        .pilot-gallery .image-box {
+            aspect-ratio: 1 / 1;
+        }
+
+        .pilot-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 14px;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            background: #fff;
+            color: #4e4e4e;
+            font-size: .9rem;
+            margin-top: 26px;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #89a56b;
+            flex: 0 0 auto;
+        }
+
+        .quote-panel {
+            margin-top: 28px;
+            padding: 24px;
+            background: var(--accent-soft);
+            border-radius: var(--radius);
+            border: 1px solid var(--line);
+            color: #333;
+            font-family: var(--font-serif);
+            font-size: 1.28rem;
+            line-height: 1.45;
+        }
+
+        .models-grid {
+            display: grid;
+            gap: 22px;
+        }
+
+        @media (min-width: 980px) {
+            .models-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .model-card {
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            overflow: hidden;
+            background: #fff;
+            box-shadow: var(--shadow);
+        }
+
+        .model-card .model-image {
+            aspect-ratio: 4 / 3;
+            background: var(--soft);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .model-card .content {
+            padding: 24px;
+        }
+
+        .model-card h3 {
+            font-family: var(--font-serif);
+            font-weight: 500;
+            font-size: 1.45rem;
+            margin-bottom: 12px;
+        }
+
+        .model-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+
+        .pill {
+            border: 1px solid var(--line);
+            padding: 8px 11px;
+            border-radius: 999px;
+            font-size: .74rem;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            color: #606060;
+            background: #fff;
+        }
+
+        .price-box {
+            margin-top: 20px;
+            padding-top: 18px;
+            border-top: 1px solid var(--line);
+        }
+
+        .price-box strong {
+            display: block;
+            color: var(--ink);
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+
+        .subcopy {
+            font-size: .94rem;
+            color: var(--muted);
+        }
+
+        .audience-grid {
+            display: grid;
+            gap: 18px;
+        }
+
+        @media (min-width: 980px) {
+            .audience-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .audience-card {
+            padding: 26px;
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            background: #fff;
+        }
+
+        .audience-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .content-plan {
+            display: grid;
+            gap: 18px;
+        }
+
+        @media (min-width: 980px) {
+            .content-plan {
+                grid-template-columns: repeat(5, 1fr);
+            }
+        }
+
+        .plan-card {
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            padding: 22px;
+            background: #fff;
+        }
+
+        .plan-card h4 {
+            margin: 0 0 12px;
+            font-size: .9rem;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            color: #444;
+            font-weight: 600;
+        }
+
+        .plan-card ul {
+            margin: 0;
+            padding-left: 18px;
+            color: var(--muted);
+        }
+
+        .plan-card li {
+            margin: 8px 0;
+        }
+
+        .pricing-grid {
+            display: grid;
+            gap: 20px;
+        }
+
+        @media (min-width: 980px) {
+            .pricing-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .contact-panel,
+        .bank-panel {
+            border: 1px solid var(--line);
+            border-radius: 30px;
+            background: linear-gradient(180deg, #fff, #fbfbf9);
+            padding: 28px;
+            box-shadow: var(--shadow);
+        }
+
+        form {
+            display: grid;
+            gap: 16px;
+            margin-top: 22px;
+        }
+
+        .field {
+            display: grid;
+            gap: 8px;
+        }
+
+        label {
+            font-size: .72rem;
+            letter-spacing: .16em;
+            text-transform: uppercase;
+            color: #696969;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            min-height: 54px;
+            padding: 14px 16px;
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            font: inherit;
+            color: var(--ink);
+            background: #fff;
+            outline: none;
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #b8b3aa;
+        }
+
+        .microcopy {
+            margin-top: 14px;
+            font-size: .86rem;
+            color: var(--muted);
+        }
+
+        /* Hover effects */
+        .card,
+        .model-card,
+        .step,
+        .audience-card,
+        .plan-card,
+        .contact-panel,
+        .bank-panel {
+            transition: transform .3s cubic-bezier(.21, .6, .35, 1), box-shadow .3s ease;
+        }
+
+        .card:hover,
+        .model-card:hover,
+        .step:hover,
+        .audience-card:hover,
+        .plan-card:hover,
+        .contact-panel:hover,
+        .bank-panel:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, .08);
+        }
+
+        .btn {
+            transition: all .2s ease;
+        }
+
+        .btn:hover {
+            transform: scale(1.02);
+            filter: brightness(1.1);
+        }
+
+        footer {
+            padding: 34px 0 54px;
+        }
+
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+            border-top: 1px solid var(--line);
+            padding-top: 22px;
+            color: var(--muted);
+            font-size: .92rem;
+        }
+
+        .footer-title {
+            color: var(--ink);
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            font-size: .8rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .section-note {
+            margin-top: 18px;
+            font-size: .88rem;
+            color: var(--muted);
+        }
+    </style>
+    <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
+    <style>
+        /* Reset Brevo default styles that conflict with our premium aesthetic */
+        .sib-form-container {
+            background-color: transparent !important;
+            padding: 0 !important;
+        }
+
+        .sib-form-message-panel {
+            margin-bottom: 20px;
+            border-radius: var(--radius) !important;
+            padding: 16px !important;
+        }
+
+        #sib-container {
+            border: none !important;
+            background: transparent !important;
+            padding: 0 !important;
+            max-width: 100% !important;
+        }
+
+        .sib-form-block {
+            padding: 0 !important;
+        }
+
+        .sib-input {
+            margin-bottom: 0 !important;
+        }
+
+        .entry__field {
+            margin-top: 0 !important;
+        }
+
+        .entry__label {
+            display: none !important;
+        }
+
+        /* We use our own labels */
+        /* Hide form when success message is shown */
+        #success-message[style*="display: block"] ~ #sib-form-container,
+        #success-message:not([style*="display:none"]) ~ #sib-form-container {
+            display: none !important;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="topbar">
+        <div class="container">
+            <div class="topbar-inner">
+                <a class="brand" href="#top" aria-label="NÓRDIC - Brava Homes">
+                    <img src="logo-transparente.png" alt="NÓRDIC - Brava Homes" />
+                </a>
+                <nav class="nav" id="mainNav" aria-label="Navegación principal">
+                    <a href="#quienes">Quiénes somos</a>
+                    <a href="#concepto">Concepto</a>
+                    <a href="#metodo">Método</a>
+                    <a href="#piloto">Casa piloto</a>
+                    <a href="#modelos">Modelos</a>
+                    <a href="#contacto">Contacto</a>
+                </nav>
+                <div class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="top" class="hero">
+        <div class="container">
+            <div class="hero-copy">
+                <p class="eyebrow">NÓRDIC - Brava Homes</p>
+                <h1>Villas Nórdicas Llave en Mano en Cataluña</h1>
+                <p class="lead">Desarrollamos viviendas de inspiración nórdica adaptadas al clima mediterráneo,
+                    acompañando al cliente desde el análisis del terreno hasta la entrega final de llaves, con
+                    coordinación integral, técnicos locales independientes y control real del proceso.</p>
+                <div class="tagline-box">Un solo interlocutor. Control técnico total. Tranquilidad absoluta.</div>
+                <div class="btn-row hero-actions">
+                    <a class="btn primary" href="#contacto">Solicitar dossier completo</a>
+                    <a class="btn" href="#contacto">Agendar videollamada</a>
+                </div>
+            </div>
+            <div class="hero-media image-box">
+                <img src="hero_render_1772475399181.png" alt="Villa nórdica contemporánea frente al mar en Cataluña" />
+            </div>
+        </div>
+    </main>
+
+    <section id="quienes" class="section">
+        <div class="container">
+            <div class="section-head">
+                <p class="eyebrow">Quiénes somos</p>
+                <h2>Un equipo, un proceso, una visión clara</h2>
+                <p class="lead">Somos un equipo de tres socios especializado en el desarrollo integral de villas
+                    nórdicas de madera en Cataluña. Coordinamos todo el proceso constructivo y administrativo, desde la
+                    búsqueda del terreno hasta la entrega final, trabajando con técnicos locales independientes para
+                    reforzar transparencia, viabilidad y control.</p>
+            </div>
+
+            <div class="grid-3">
+                <article class="card">
+                    <h3>Coordinación integral</h3>
+                    <p>Actuamos como interlocutor principal del proyecto, unificando decisiones, plazos, técnicos y
+                        ejecución.</p>
+                    <ul class="list">
+                        <li>Búsqueda y validación de terreno</li>
+                        <li>Coordinación de proyecto arquitectónico</li>
+                        <li>Gestión de fases y tiempos</li>
+                    </ul>
+                </article>
+
+                <article class="card">
+                    <h3>Técnicos independientes</h3>
+                    <p>Colaboramos con profesionales locales independientes para topografía, geometría, dirección y
+                        seguimiento técnico de obra.</p>
+                    <ul class="list">
+                        <li>Topografía y levantamientos</li>
+                        <li>Estudios geométricos</li>
+                        <li>Seguimiento y control técnico</li>
+                    </ul>
+                </article>
+
+                <article class="card">
+                    <h3>Seguridad y claridad</h3>
+                    <p>Nuestro compromiso es reducir incertidumbre y evitar errores costosos, ofreciendo un marco claro
+                        desde el inicio.</p>
+                    <ul class="list">
+                        <li>Transparencia en fases y decisiones</li>
+                        <li>Control externo y documental</li>
+                        <li>Acompañamiento continuo al cliente</li>
+                    </ul>
+                </article>
+            </div>
+
+            <div class="image-box" style="margin-top: 34px; aspect-ratio: 16 / 7;">
+                <img src="equipo_visita_1772475411251.png" alt="Equipo técnico revisando planos y visita de obra" />
+            </div>
+        </div>
+    </section>
+
+    <section id="concepto" class="section">
+        <div class="container">
+            <div class="concept-grid">
+                <div>
+                    <p class="eyebrow">Nuestro concepto</p>
+                    <h2>No construimos casas estándar</h2>
+                    <p class="lead" style="margin-top: 22px;">Desarrollamos viviendas de inspiración nórdica adaptadas
+                        al clima mediterráneo. La arquitectura debe ser sobria, atemporal, eficiente y técnicamente
+                        rigurosa, pero también cómoda, luminosa y coherente con la forma de vivir en Cataluña.</p>
+
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <strong>Eficiencia energética</strong>
+                            <span>Envolventes optimizadas, confort térmico y reducción de demanda energética.</span>
+                        </div>
+                        <div class="feature-item">
+                            <strong>Diseño atemporal</strong>
+                            <span>Volúmenes limpios, proporciones serenas y estética contemporánea duradera.</span>
+                        </div>
+                        <div class="feature-item">
+                            <strong>Materiales naturales</strong>
+                            <span>Madera, acabados honestos y soluciones constructivas pensadas para durar.</span>
+                        </div>
+                        <div class="feature-item">
+                            <strong>Integración con el entorno</strong>
+                            <span>Orientación, luz, paisaje y relación interior-exterior como parte del proyecto.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="image-box" style="aspect-ratio: 4 / 5;">
+                    <img src="interior_luz_1772475436548.png"
+                        alt="Interior luminoso con materiales naturales y grandes ventanales" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="metodo" class="section">
+        <div class="container">
+            <div class="section-head">
+                <p class="eyebrow">Nuestro método</p>
+                <h2>Un proceso de 6 pasos para construir con control</h2>
+                <p class="lead">Cada fase tiene una función precisa: ordenar, anticipar riesgos y dar al cliente la
+                    tranquilidad de avanzar con base técnica y decisiones bien acompañadas.</p>
+            </div>
+
+            <div class="method-grid">
+                <article class="step">
+                    <div class="step-number">01</div>
+                    <h3>Análisis del cliente</h3>
+                    <div class="step-block">
+                        <strong>Qué hacemos</strong>
+                        <p>Definimos necesidades, estilo de vida, presupuesto y calendario realista.</p>
+                    </div>
+                    <div class="step-block">
+                        <strong>Qué riesgo evitamos</strong>
+                        <p>Expectativas irreales y decisiones prematuras.</p>
+                    </div>
+                    <div class="step-block">
+                        <strong>Qué obtiene el cliente</strong>
+                        <p>Un marco de proyecto claro desde el inicio.</p>
+                    </div>
+                </article>
+
+                <article class="step">
+                    <div class="step-number">02</div>
+                    <h3>Validación del terreno</h3>
+                    <div class="step-block">
+                        <strong>Qué hacemos</strong>
+                        <p>Analizamos normativa, edificabilidad, orientación, topografía y condicionantes.</p>
+                    </div>
+                    <div class="step-block">
+                        <strong>Qué riesgo evitamos</strong>
+                        <p>Comprar un terreno con limitaciones ocultas o costes imprevistos.</p>
+                    </div>
+                    <div class="step-block">
+                        <strong>Qué obtiene el cliente</strong>
+                        <p>Seguridad antes de comprometer inversión.</p>
+                    </div>
+                </article>
+
+                <article class="step">
+                    <div class="step-number">03</div>
+                    <h3>Proyecto arquitectónico</h3>
+                    <div class="step-block">
+                        <strong>Qué hacemos</strong>
+                        <p>Coordinamos la propuesta arquitectónica y los estudios técnicos necesarios.</p>
+                    </div>
+                    <div class="step-block">
+                        <strong>Qué riesgo evitamos</strong>
+                        <p>Soluciones inviables o mal adaptadas al lugar.</p>
+                    </div>
+                    <div class="step-block">
+                        <strong>Qué obtiene el cliente</strong>
+                        <p>Un proyecto sólido, coherente y ejecutable.</p>
+                    </div>
+                </article>
+
+                <article class="step">
+                    <div class="step-number">04</div>
+                    <h3>Licencias y planificación</h3>
+                    <div class="step-block">
+                        <strong>Qué hacemos</strong>
+                        <p>Ordenamos documentación, tramitaciones y cronograma de fases.</p>
+                    </div>
+                    <div class="step-block">
+                        <strong>Qué riesgo evitamos</strong>
+                        <p>Bloqueos administrativos y retrasos por falta de previsión.</p>
+                    </div>
+                    <div class="step-block">
+                        <strong>Qué obtiene el cliente</strong>
+                        <p>Mayor claridad jurídica y organizativa.</p>
+                    </div>
+                </article>
+
+                <article class="step">
+                    <div class="step-number">05</div>
+                    <h3>Construcción y seguimiento</h3>
+                    <div class="step-block">
+                        <strong>Qué hacemos</strong>
+                        <p>Coordinamos plataforma, estructura, instalaciones y control de calidad.</p>
+                    </div>
+                    <div class="step-block">
+                        <strong>Qué riesgo evitamos</strong>
+                        <p>Desviaciones de ejecución y sobrecostes por mala coordinación.</p>
+                    </div>
+                    <div class="step-block">
+                        <strong>Qué obtiene el cliente</strong>
+                        <p>Una obra ordenada y supervisada.</p>
+                    </div>
+                </article>
+
+                <article class="step">
+                    <div class="step-number">06</div>
+                    <h3>Entrega final</h3>
+                    <div class="step-block">
+                        <strong>Qué hacemos</strong>
+                        <p>Acompañamos hasta la entrega de llaves y la formalización final del cierre técnico.</p>
+                    </div>
+                    <div class="step-block">
+                        <strong>Qué riesgo evitamos</strong>
+                        <p>Falta de seguimiento en la fase final del proyecto.</p>
+                    </div>
+                    <div class="step-block">
+                        <strong>Qué obtiene el cliente</strong>
+                        <p>Tranquilidad y continuidad hasta la puesta en marcha.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="piloto" class="section">
+        <div class="container">
+            <div class="pilot-grid">
+                <div>
+                    <p class="eyebrow">Casa piloto</p>
+                    <h2>Un proyecto real</h2>
+                    <p class="lead" style="margin-top: 22px;">Nuestra casa piloto es un proyecto real en desarrollo que
+                        utilizamos como base de demostración de método, decisiones técnicas, tiempos y nivel de control.
+                        No hablamos de una idea futura: construimos hoy lo que proponemos a nuestros clientes.</p>
+
+                    <ul class="list" style="margin-top: 24px;">
+                        <li>Terreno adquirido</li>
+                        <li>Licencia en tramitación / concedida según fase</li>
+                        <li>Técnicos contratados</li>
+                        <li>Seguimiento técnico independiente</li>
+                        <li>Avance de obra documentado</li>
+                    </ul>
+
+                    <div class="pilot-badge"><span class="dot"></span> Proyecto piloto visitable bajo cita previa</div>
+
+                    <div class="quote-panel">“Construimos hoy lo que proponemos a nuestros clientes.”</div>
+                </div>
+
+                <div class="pilot-gallery">
+                    <div class="image-box"><img src="terreno_parcela_1772475626002.png"
+                            alt="Terreno adquirido para casa piloto" /></div>
+                    <div class="image-box"><img src="estructura_madera_1772476034133.png"
+                            alt="Proceso de estructura de madera" /></div>
+                    <div class="image-box"><img src="detalle_tecnico_1772476095947.png"
+                            alt="Detalle técnico constructivo" /></div>
+                    <div class="image-box"><img src="interior_luz_1772475436548.png"
+                            alt="Referencia de acabado e interior" /></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="modelos" class="section">
+        <div class="container">
+            <div class="section-head" style="text-align: center; margin-inline: auto;">
+                <p class="eyebrow">Tipologías</p>
+                <h2>Modelos adaptables a su vida</h2>
+                <p class="lead" style="margin-inline: auto;">Precios base solo por la estructura de madera, base de
+                    nuestro método constructivo.</p>
+            </div>
+
+            <div class="models-grid">
+                <article class="model-card">
+                    <div class="model-image">
+                        <img src="render-S.png" alt="Modelo S" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="content">
+                        <h3>Modelo S</h3>
+                        <div class="model-meta">
+                            <span class="pill">70–90 m²</span>
+                            <span class="pill">2 Hab</span>
+                            <span class="pill">1 Baño</span>
+                        </div>
+                        <p class="subcopy">Ideal para parejas o segunda residencia eficiente.</p>
+                        <div class="price-box">
+                            <strong>Desde 75.000€</strong>
+                            <p class="microcopy">Estructura de madera certificada</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="model-card">
+                    <div class="model-image">
+                        <img src="render-M.png" alt="Modelo M" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="content">
+                        <h3>Modelo M</h3>
+                        <div class="model-meta">
+                            <span class="pill">90–110 m²</span>
+                            <span class="pill">3 Hab</span>
+                            <span class="pill">2 Baños</span>
+                        </div>
+                        <p class="subcopy">Equilibrio perfecto para familias en crecimiento.</p>
+                        <div class="price-box">
+                            <strong>Desde 95.000€</strong>
+                            <p class="microcopy">Estructura de madera certificada</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="model-card">
+                    <div class="model-image">
+                        <img src="render-L.png" alt="Modelo L" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div class="content">
+                        <h3>Modelo L</h3>
+                        <div class="model-meta">
+                            <span class="pill">110–130 m²</span>
+                            <span class="pill">4 Hab</span>
+                            <span class="pill">3 Baños</span>
+                        </div>
+                        <p class="subcopy">Espacios amplios y flexibilidad total.</p>
+                        <div class="price-box">
+                            <strong>Desde 125.000€</strong>
+                            <p class="microcopy">Estructura de madera certificada</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="section">
+        <div class="container">
+            <div class="section-head">
+                <p class="eyebrow">A quién nos dirigimos</p>
+                <h2>Clientes que valoran diseño, control y tiempo bien invertido</h2>
+            </div>
+            <div class="audience-grid">
+                <article class="audience-card">
+                    <h3>Segunda residencia internacional</h3>
+                    <p>Clientes extranjeros que desean construir en Cataluña con un interlocutor claro, seguridad
+                        documental y seguimiento local.</p>
+                </article>
+                <article class="audience-card">
+                    <h3>Familias que buscan eficiencia</h3>
+                    <p>Personas que quieren una vivienda diferente, bien planificada y con criterios reales de confort y
+                        durabilidad.</p>
+                </article>
+                <article class="audience-card">
+                    <h3>Teletrabajo y nueva forma de vivir</h3>
+                    <p>Perfiles con estilo de vida flexible, sensibilidad por la arquitectura y necesidad de espacios
+                        serenos y luminosos.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="section-head">
+                <p class="eyebrow">Calendario editorial de obra</p>
+                <h2>Contenido para construir confianza durante la ejecución</h2>
+                <p class="lead">Propuesta base de comunicación: 2 publicaciones semanales y 1 reel semanal documentando
+                    el proyecto piloto y educando al futuro cliente.</p>
+            </div>
+
+            <div class="content-plan">
+                <article class="plan-card">
+                    <h4>Licencia</h4>
+                    <ul>
+                        <li>Cómo gestionamos una licencia en Cataluña</li>
+                        <li>Qué revisa el ayuntamiento antes de aprobar</li>
+                    </ul>
+                </article>
+                <article class="plan-card">
+                    <h4>Plataforma</h4>
+                    <ul>
+                        <li>Por qué la base es clave en una casa de madera</li>
+                        <li>Vídeo corto del proceso</li>
+                    </ul>
+                </article>
+                <article class="plan-card">
+                    <h4>Estructura</h4>
+                    <ul>
+                        <li>Llegada de la estructura</li>
+                        <li>Montaje en tiempo real</li>
+                        <li>Ventajas técnicas de la madera</li>
+                    </ul>
+                </article>
+                <article class="plan-card">
+                    <h4>Instalaciones</h4>
+                    <ul>
+                        <li>Eficiencia energética</li>
+                        <li>Aislamiento y confort térmico</li>
+                    </ul>
+                </article>
+                <article class="plan-card">
+                    <h4>Final de obra</h4>
+                    <ul>
+                        <li>Acabados</li>
+                        <li>Recorrido interior</li>
+                        <li>Antes / después</li>
+                    </ul>
+                </article>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="contacto" class="section" style="border-bottom: none;">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-panel">
+                    <p class="eyebrow">Próximos pasos</p>
+                    <h2>Empezamos por una conversación clara</h2>
+
+                    <div id="error-message" class="sib-form-message-panel"
+                        style="display:none; font-size:16px; text-align:left; font-family:var(--font-sans); color:#661d1d; background-color:#ffeded; border-radius:var(--radius); border: 1px solid #ff4949; margin-bottom: 24px;">
+                        <div class="sib-form-message-panel__text">
+                            <span class="sib-form-message-panel__inner-text">No hemos podido validar su petición. Por
+                                favor, revise los campos e inténtelo de nuevo.</span>
+                        </div>
+                    </div>
+
+                    <div id="success-message" class="sib-form-message-panel"
+                        style="display:none; font-size:16px; text-align:left; font-family:var(--font-sans); color:#085229; background-color:#e7faf0; border-radius:var(--radius); border: 1px solid #13ce66; margin-bottom: 24px;">
+                        <div class="sib-form-message-panel__text">
+                            <span class="sib-form-message-panel__inner-text">¡Solicitud recibida! Hemos recibido su
+                                consulta correctamente. Nos pondremos en contacto con usted en breve.</span>
+                        </div>
+                    </div>
+
+                    <div id="sib-form-container" class="sib-form-container">
+                        <div id="sib-container" class="sib-container--large sib-container--vertical">
+                            <form id="sib-form" method="POST"
+                                action="https://00889b9f.sibforms.com/serve/MUIFAHdKWbxl7vGhEluji_dW4cdMjhvbIN8jWHi1tDY1Gs5Ag18bn2V_Rpn-7MtsauwLmvYdbCqJhsUTxsidngweJ2nsk4CNVGR_1spBxcYRZwKKy9ckE8i0mm-ctcdvTHny6zYMS5VF8hDnBl8aFTs3DrpcPf2trI8Wl5iFwaMOt3XPbQ8TA5s2LS5FXcP6qGvYX90YjL_K9GoFQg=="
+                                data-type="subscription">
+
+                                <div class="sib-input sib-form-block">
+                                    <div class="form__entry entry_block">
+                                        <div class="field">
+                                            <label for="NOMBRE">Nombre completo</label>
+                                            <input id="NOMBRE" name="NOMBRE" type="text"
+                                                placeholder="Nombre y apellidos" autocomplete="name"
+                                                data-required="true" required />
+                                        </div>
+                                        <label class="entry__error entry__error--primary" style="display:none;"></label>
+                                    </div>
+                                </div>
+
+                                <div class="sib-input sib-form-block">
+                                    <div class="form__entry entry_block">
+                                        <div class="field">
+                                            <label for="EMAIL">Correo electrónico</label>
+                                            <input id="EMAIL" name="EMAIL" type="email" placeholder="correo@dominio.com"
+                                                autocomplete="email" data-required="true" required />
+                                        </div>
+                                        <label class="entry__error entry__error--primary" style="display:none;"></label>
+                                    </div>
+                                </div>
+
+                                <div class="sib-input sib-form-block">
+                                    <div class="form__entry entry_block">
+                                        <div class="field">
+                                            <label for="PAIS">País</label>
+                                            <input id="PAIS" name="PAIS" type="text" placeholder="Ej. Alemania / España"
+                                                autocomplete="country" data-required="true" required />
+                                        </div>
+                                        <label class="entry__error entry__error--primary" style="display:none;"></label>
+                                    </div>
+                                </div>
+
+                                <div class="sib-input sib-form-block">
+                                    <div class="form__entry entry_block">
+                                        <div class="field">
+                                            <label for="TELEFONO">Teléfono</label>
+                                            <input id="TELEFONO" name="TELEFONO" type="tel"
+                                                placeholder="+34 600 000 000" pattern="[+0-9 ]+" autocomplete="tel"
+                                                data-required="true" required />
+                                        </div>
+                                        <label class="entry__error entry__error--primary" style="display:none;"></label>
+                                    </div>
+                                </div>
+
+                                <div class="sib-input sib-form-block">
+                                    <div class="form__entry entry_block">
+                                        <div class="field">
+                                            <label for="MODELO">Modelo de interés</label>
+                                            <select id="MODELO" name="MODELO" data-required="true" required>
+                                                <option value="" disabled selected>Seleccionar modelo</option>
+                                                <option value="Modelo S">Modelo S — 70–90 m²</option>
+                                                <option value="Modelo M">Modelo M — 90–110 m²</option>
+                                                <option value="Modelo L">Modelo L — 110–130 m²</option>
+                                                <option value="Personalizado">Proyecto personalizado</option>
+                                            </select>
+                                        </div>
+                                        <label class="entry__error entry__error--primary" style="display:none;"></label>
+                                    </div>
+                                </div>
+
+                                <div class="sib-input sib-form-block">
+                                    <div class="form__entry entry_block">
+                                        <div class="field">
+                                            <label for="PRESUPUESTO">Presupuesto estimado</label>
+                                            <select id="PRESUPUESTO" name="PRESUPUESTO" data-required="true" required>
+                                                <option value="" disabled selected>Seleccionar rango</option>
+                                                <option value="100-200k">100.000€ – 200.000€</option>
+                                                <option value="200-350k">200.000€ – 350.000€</option>
+                                                <option value="350k+">Más de 350.000€</option>
+                                            </select>
+                                        </div>
+                                        <label class="entry__error entry__error--primary" style="display:none;"></label>
+                                    </div>
+                                </div>
+
+                                <div class="sib-input sib-form-block">
+                                    <div class="form__entry entry_block">
+                                        <div class="field">
+                                            <label for="TERRENO">¿Dispone de terreno?</label>
+                                            <select id="TERRENO" name="TERRENO" data-required="true" required>
+                                                <option value="" disabled selected>Seleccionar opción</option>
+                                                <option value="si">Sí, dispongo de terreno</option>
+                                                <option value="buscando">No, estoy buscando terreno</option>
+                                            </select>
+                                        </div>
+                                        <label class="entry__error entry__error--primary" style="display:none;"></label>
+                                    </div>
+                                </div>
+
+                                <div class="sib-input sib-form-block">
+                                    <div class="form__entry entry_block">
+                                        <div class="field">
+                                            <label for="PLAZO">¿Cuándo le gustaría iniciar el proyecto?</label>
+                                            <select id="PLAZO" name="PLAZO">
+                                                <option value="inmediato">Lo antes posible</option>
+                                                <option value="6meses">En los próximos 6 meses</option>
+                                                <option value="1ano">En aproximadamente 1 año</option>
+                                                <option value="explorando">Solo estoy explorando opciones</option>
+                                            </select>
+                                        </div>
+                                        <label class="entry__error entry__error--primary" style="display:none;"></label>
+                                    </div>
+                                </div>
+
+                                <div class="sib-input sib-form-block">
+                                    <div class="form__entry entry_block">
+                                        <div class="field">
+                                            <label for="MENSAJE">Mensaje</label>
+                                            <textarea id="MENSAJE" name="MENSAJE"
+                                                placeholder="Cuéntenos brevemente su proyecto: zona donde le gustaría construir, superficie aproximada o cualquier información relevante."
+                                                data-required="true" required></textarea>
+                                        </div>
+                                        <label class="entry__error entry__error--primary" style="display:none;"></label>
+                                    </div>
+                                </div>
+
+                                <input type="text" name="email_address_check" value="" style="display:none !important;"
+                                    tabindex="-1">
+                                <input type="hidden" name="locale" value="es">
+                                <input type="hidden" name="html_type" value="simple">
+
+                                <button class="btn primary sib-form-block__button sib-form-block__button-with-loader"
+                                    type="submit" form="sib-form">
+                                    <svg class="icon clickable__icon progress-indicator__icon sib-hide-loader-icon"
+                                        viewBox="0 0 512 512" style="width: 20px; height: 20px; display: none;">
+                                        <path
+                                            d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.652-5.386-189.946-33.641-58.394-94.896-95.833-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.75 8.461-16.728 5.01z"
+                                            fill="currentColor" />
+                                    </svg>
+                                    Solicitar información
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                    <p class="microcopy">Tras enviar su solicitud recibirá un correo de confirmación. Nuestro equipo
+                        revisará su proyecto y se pondrá en contacto con usted en breve.</p>
+                </div>
+
+                <div class="bank-panel">
+                    <p class="eyebrow">Discurso para bancos / financiación</p>
+                    <h2 style="font-size: clamp(1.8rem, 3.3vw, 2.8rem);">Un modelo ordenado, seguro y controlado</h2>
+                    <p style="margin-top: 18px;" class="lead">Nuestro modelo reduce riesgos constructivos mediante
+                        coordinación integral y control técnico externo. El objetivo es estructurar proyectos
+                        replicables con documentación, seguimiento y previsión de fases.</p>
+                    <ul class="list">
+                        <li>Proyecto con terreno ya adquirido o en validación</li>
+                        <li>Licencia en proceso según fase del piloto</li>
+                        <li>Técnicos independientes contratados</li>
+                        <li>Control presupuestario por fases</li>
+                        <li>Modelo replicable</li>
+                        <li>Demanda creciente de vivienda eficiente en Cataluña</li>
+                    </ul>
+                    <div class="quote-panel" style="font-size: 1.12rem; margin-top: 24px;">
+                        “Nuestro valor no es solo construir; es coordinar, ordenar y reducir riesgos para que el
+                        proyecto avance con seguridad.”
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-inner">
+                <div>
+                    <div class="footer-title">NÓRDIC - Brava Homes</div>
+                    <div>Villas nórdicas llave en mano en Cataluña. Diseño, control y tranquilidad.</div>
+                </div>
+                <div>
+                    <div class="footer-title">Contacto</div>
+                    <div>fdfont@gmail.com</div>
+                    <div style="margin-top: 6px;">© <span id="year"></span> NÓRDIC - Brava Homes</div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const mainNav = document.getElementById('mainNav');
+        const body = document.body;
+
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            mainNav.classList.toggle('active');
+            body.classList.toggle('menu-open');
+        });
+
+        // Close menu when link is clicked
+        const navLinks = mainNav.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                mainNav.classList.remove('active');
+                body.classList.remove('menu-open');
+            });
+        });
+    </script>
+    <script>
+        window.REQUIRED_CODE_ERROR_MESSAGE = 'Elija un código de país';
+        window.LOCALE = 'es';
+        window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "La información que ha proporcionado no es válida. Compruebe el formato del campo e inténtelo de nuevo.";
+        window.REQUIRED_ERROR_MESSAGE = "Este campo no puede quedarse vacío. ";
+        window.GENERIC_INVALID_MESSAGE = "La información que ha proporcionado no es válida. Compruebe el formato del campo e inténtelo de nuevo.";
+        window.translation = {
+            common: {
+                selectedList: '{quantity} lista seleccionada',
+                selectedLists: '{quantity} listas seleccionadas',
+                selectedOption: '{quantity} seleccionado',
+                selectedOptions: '{quantity} seleccionados',
+            }
+        };
+        var AUTOHIDE = Boolean(0);
+    </script>
+    <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
+</body>
+
+</html>
